@@ -54,6 +54,41 @@ body {
     background-attachment: fixed;
 }
 
+.form-control {
+    margin-top: 10px;
+    display: inline-block;
+    width: 100vh;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: rgba(220, 220, 220, .7);
+    box-sizing: content-box;
+}
+
+.submit {
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    height: 25px;
+    width: 70px;
+    font-size: large;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    border-radius: 10px;
+    transition: opacity 0.1s;
+}
+
+.table {
+    display: inline-block;
+    margin: auto;;
+}
+
 .footer {
     height: 70px;
     background-color: black;

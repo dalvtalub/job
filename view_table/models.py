@@ -18,6 +18,7 @@ class Books(models.Model):
     """Model of Books"""
     year_of_writing = models.IntegerField('Year of writing')
     name = models.CharField('Name', max_length=40)
+    # added ForeignKey. One to many, although one book can has more than one author
     author = models.ForeignKey(Authors, on_delete=models.PROTECT, null=True)
 
     def __str__(self):

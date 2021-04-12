@@ -10,20 +10,22 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <header class="header">
-        <a class="company_name">DALVTALUB</a>
-        <nav class="nav_block">
-            <a class="navigation" href="/download_file">DOWNLOAD FILE</a>
-            <a class="navigation" href="/">SHOW TABLE</a>
-        </nav>
-    </header>
-    <div class="container">
-        <div class="blackout">
-               {% block content %}{% endblock %}
-        </div>
-    </div>
-    <footer class='footer'>
-        <h2 class='footer'>© 2021 Done in one evening. Vlad Bulat</h2>
-    </footer>
+    {% if request.user.is_authenticated and request.user.is_staff %}
+        <header class="header">
+            <a class="company_name">DALVTALUB</a>
+            <nav class="nav_block">
+                <a class="navigation" href="/download_file">DOWNLOAD FILE</a>
+                <a class="navigation" href="/">SHOW TABLE</a>
+            </nav>
+        </header>
+        <div class="container">
+                   {% block content %}{% endblock %}
+            </div>
+        <footer class='footer'>
+            <h2 class='footer'>© 2021 Done in one evening. Vlad Bulat</h2>
+        </footer>
+    {% else %}
+        <h2>403 Forbidden</h2>
+    {% endif %}
 </body>
 </html>
